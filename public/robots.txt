@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jammu-ca-growth-engine.lovable.app/sitemap.xml
