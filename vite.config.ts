@@ -9,7 +9,9 @@ export default defineConfig({
   plugins: [
     tanstackStart(),
     nitro(),
-    viteReact(),
+    viteReact({
+      jsxRuntime: "automatic", // This explicitly fixes the "React is not defined" error
+    }),
     tailwindcss(),
     tsConfigPaths(),
   ],
