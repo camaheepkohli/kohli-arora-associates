@@ -8,9 +8,12 @@ import tsConfigPaths from "vite-tsconfig-paths";
 export default defineConfig({
   plugins: [
     tanstackStart(),
-    nitro(),
+    // Force the preset to Vercel to bypass autodetect issues
+    nitro({
+      preset: "vercel",
+    }),
     viteReact({
-      jsxRuntime: "automatic", // This explicitly fixes the "React is not defined" error
+      jsxRuntime: "automatic",
     }),
     tailwindcss(),
     tsConfigPaths(),
