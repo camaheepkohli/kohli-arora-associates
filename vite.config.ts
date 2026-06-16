@@ -2,19 +2,11 @@
 // or the app will break with duplicate plugins:
 // - tanstackStart, viteReact, tailwindcss, tsConfigPaths, componentTagger
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
-import { nitro } from "nitro/vite";
 
 export default defineConfig({
   tanstackStart: {
     server: {
-      entry: "server", // Restores the crucial server routing layer you removed
+      preset: "vercel", // Forces the underlying Nitro server to build for Vercel instead of Cloudflare
     },
-  },
-  vite: {
-    plugins: [
-      nitro({
-        preset: "vercel", // Forces the application to package your styles for Vercel
-      }),
-    ],
   },
 });
